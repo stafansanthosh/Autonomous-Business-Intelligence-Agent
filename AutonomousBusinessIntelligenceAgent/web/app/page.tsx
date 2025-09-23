@@ -151,9 +151,13 @@ export default function HomePage() {
             onFiles={onFiles} 
             metrics={aggregate}
             loadSampleLinks={[
+              { label: 'ad_spend.csv', href: '/samples/ad_spend.csv' },
+              { label: 'inventory.csv', href: '/samples/inventory.csv' },
+              { label: 'inventory_snapshot.csv', href: '/samples/inventory_snapshot.csv' },
               { label: 'orders.csv', href: '/samples/orders.csv' },
               { label: 'products.csv', href: '/samples/products.csv' },
-              { label: 'inventory.csv', href: '/samples/inventory.csv' }
+              { label: 'returns_daily.csv', href: '/samples/returns_daily.csv' },
+              { label: 'sales_daily.csv', href: '/samples/sales_daily.csv' }
             ]}
           />
         </div>

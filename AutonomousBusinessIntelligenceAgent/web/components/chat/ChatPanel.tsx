@@ -14,7 +14,7 @@ interface Props {
 export const ChatPanel: React.FC<Props> = ({ messages, onSend, loading, promptPreview }) => {
   return (
     <div className="flex flex-col w-full h-full">
-      <h1 className="text-lg font-semibold mb-2">Chat</h1>
+  <h1 className="text-lg font-semibold mb-2">Autonomous Business Intelligence Agent</h1>
       <div className="flex-1 min-h-0 flex flex-col border rounded bg-gray-50 dark:bg-slate-900/40 p-3 mb-4">
         <MessageList messages={messages} />
       </div>

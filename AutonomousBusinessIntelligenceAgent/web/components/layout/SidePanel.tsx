@@ -17,8 +17,16 @@ export const SidePanel: React.FC<Props> = ({ files, onFiles, metrics, loadSample
       <h2 className="text-md font-semibold">Data Files</h2>
       <label htmlFor="fileInput" className="text-xs font-medium mt-2">Upload CSV Files</label>
       <input id="fileInput" type="file" multiple accept=".csv" onChange={(e)=>onFiles(e.target.files)} />
-      <div className="flex flex-wrap gap-2 mt-2">
-        {loadSampleLinks.map(l => <a key={l.href} className="text-indigo-600 text-[11px] underline" href={l.href} download>{l.label}</a>)}
+      <div className="mt-4">
+        <div className="text-[11px] font-semibold uppercase tracking-wide text-indigo-600 mb-1">Sample Datasets</div>
+        <ul className="space-y-1 text-[11px]">
+          {loadSampleLinks.map(l => (
+            <li key={l.href}>
+              <a className="text-indigo-600 underline hover:text-indigo-800" href={l.href} download>{l.label}</a>
+            </li>
+          ))}
+          {loadSampleLinks.length === 0 && <li className="text-gray-500 italic">No samples</li>}
+        </ul>
       </div>
       <div className="mt-3 space-y-2 overflow-y-auto pr-1">
         {files.map(f => (

@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
-        <header className="px-4 py-2 bg-indigo-600 text-white text-sm font-medium">Demo only – do not upload proprietary data</header>
+  <header className="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold tracking-wide">Autonomous Business Intelligence Agent</header>
         <main className="flex-1 flex overflow-hidden">{children}</main>
       </body>
     </html>

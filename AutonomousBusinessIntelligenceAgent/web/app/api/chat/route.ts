@@ -4,7 +4,7 @@ import { buildPrompt } from '../../../lib/prompt/buildPrompt';
 
 export const runtime = 'nodejs'; // edge can be considered later
 
-interface ChatRequestBody { question?: unknown; metricsSummary?: unknown }
+interface ChatRequestBody { question?: unknown; metricsSummary?: unknown; context?: unknown }
 
 function normalizeQuestion(q: unknown): string {
   if (typeof q === 'string') return q.trim();
@@ -23,7 +23,8 @@ export async function POST(req: NextRequest) {
     return new Response('Bad Request: question required', { status: 400 });
   }
   try {
-    const prompt = buildPrompt(question, body.metricsSummary);
+  const contextLike = body.context ?? body.metricsSummary; // backward compatibility
+  const prompt = buildPrompt(question, contextLike);
     const stream = await selectProviderAndStream(prompt);
     return new Response(stream, {
       headers: {

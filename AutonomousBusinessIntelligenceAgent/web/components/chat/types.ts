@@ -3,6 +3,12 @@ export interface ChatMessage {
   role: 'user' | 'assistant' | 'system';
   content: string;
   pending?: boolean; // streaming in progress
+  tables?: ParsedTable[];
+}
+
+export interface ParsedTable {
+  headers: string[];
+  rows: string[][];
 }
 
 export interface SendMessageFn {

@@ -29,7 +29,7 @@ The agent independently:
 	npm run dev
 	```
 4. Open http://localhost:3000 and upload sample CSVs from `web/public/samples`.
-5. Ask a question in the chat panel; if no keys are set you will see a mock streamed response.
+5. Ask a question in the chat panel; if no keys are set you will see a mock streamed response. Which we dont want.
 
 ## Deployment (Vercel)
 

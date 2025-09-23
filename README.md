@@ -22,8 +22,25 @@ The agent independently:
 
 ## Usage
 1. Clone repo & install dependencies.
-2. Upload sample CSVs from `/public/data`.
-3. Explore dashboards and simulate actions via the agent log.
+2. Copy `web/.env.example` to `web/.env.local` and fill in any available API keys (optional for mock mode).
+3. From the `web` directory run:
+	```bash
+	npm install
+	npm run dev
+	```
+4. Open http://localhost:3000 and upload sample CSVs from `web/public/samples`.
+5. Ask a question in the chat panel; if no keys are set you will see a mock streamed response.
+
+### Environment Variables (Optional for Mock)
+The following variables are referenced by the LLM provider selector:
+
+Azure OpenAI (preferred if complete):
+`AZURE_OPENAI_KEY`, `AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_DEPLOYMENT`, `AZURE_OPENAI_API_VERSION`
+
+OpenAI fallback:
+`OPENAI_API_KEY`, `OPENAI_MODEL`
+
+If neither provider is configured a deterministic mock response is streamed.
 
 ## License
 [MIT](./LICENSE)

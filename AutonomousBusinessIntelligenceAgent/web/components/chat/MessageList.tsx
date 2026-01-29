@@ -42,7 +42,7 @@ export const MessageList: React.FC<Props> = ({ messages, autoScroll = true }) =>
   return (
     <div className="flex-1 overflow-y-auto space-y-3 pr-1" data-testid="message-list">
       {messages.map(m => (
-  <div key={m.id} className={`rounded border p-2 text-sm bg-white dark:bg-slate-800 dark:border-slate-700 ${m.role==='user' ? 'border-indigo-300 bg-indigo-50 dark:bg-indigo-950/30' : 'border-gray-200'}`}> 
+  <div key={m.id} className={`rounded border p-2 text-sm bg-white dark:bg-slate-800 dark:border-slate-700 ${m.role==='user' ? 'border-red-300 bg-red-50 dark:bg-red-950/30' : 'border-gray-200'}`}> 
           <div className="font-semibold text-[11px] uppercase tracking-wide mb-1 opacity-70">{m.role}</div>
           {m.role==='assistant'
             ? renderMarkdown(m.content, !!(m.tables && m.tables.length))

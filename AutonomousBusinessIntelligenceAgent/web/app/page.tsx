@@ -131,14 +131,14 @@ export default function HomePage() {
       <div className="flex flex-col md:flex-row flex-1 w-full">
         <div className="md:w-2/3 w-full border-r border-gray-200 dark:border-slate-800 p-4 gap-4 flex flex-col">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-medium uppercase tracking-wide text-indigo-600 dark:text-indigo-400">Chat Session</span>
+            <span className="text-xs font-medium uppercase tracking-wide text-red-600 dark:text-red-400">Chat Session</span>
             <button onClick={()=>setDark(d=>!d)} className="text-xs border rounded px-2 py-1 dark:border-slate-600">{dark? 'Light' : 'Dark'}</button>
           </div>
           <ChatPanel messages={messages} onSend={sendMessage} loading={loading} promptPreview={preview} />
           {followUps.length>0 && (
             <div className="flex flex-wrap gap-2 mt-2">
               {followUps.map(f => (
-                <button key={f} onClick={()=>!loading && sendMessage(f)} className="text-xs px-2 py-1 rounded border dark:border-slate-600 hover:bg-indigo-50 dark:hover:bg-slate-800 transition">
+                <button key={f} onClick={()=>!loading && sendMessage(f)} className="text-xs px-2 py-1 rounded border dark:border-slate-600 hover:bg-red-50 dark:hover:bg-slate-800 transition">
                   {f}
                 </button>
               ))}

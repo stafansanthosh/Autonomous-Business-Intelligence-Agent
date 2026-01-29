@@ -20,7 +20,7 @@ export const MessageInput: React.FC<Props> = ({ onSend, disabled }) => {
         onChange={e=>setValue(e.target.value)}
       />
       <div className="flex items-center gap-2">
-        <button onClick={send} disabled={disabled} className="bg-indigo-600 text-white px-4 py-2 rounded disabled:opacity-50 text-sm">{disabled? 'Asking…' : 'Ask'}</button>
+        <button onClick={send} disabled={disabled} className="bg-red-600 text-white px-4 py-2 rounded disabled:opacity-50 text-sm">{disabled? 'Asking…' : 'Ask'}</button>
       </div>
     </div>
   );
